@@ -1,0 +1,36 @@
+<main>
+  <div class="score-board">
+    <h3>James Bond
+      <span>{{userCounter}}</span>
+    </h3>
+    <h3>Sherlock Holmes
+      <span>{{computerCounter}}</span>
+    </h3>
+  </div>
+  <div class="container">
+    <section>
+      <img src="{{userChoice.url}}" alt="{{userChoice.name}}" title="{{userChoice.name}}" width="144" height="144">
+      <p class="text">Select your choice</p>
+    </section>
+    <section class="winner-message">
+      <p>{{winnerMessage}}</p>
+    </section>
+    <section class="computer">
+      <img src="{{computerChoice.url}}" alt="{{computerChoice.name}}" title="{{computerChoice.name}}" width="144" height="144">
+    </section>
+  </div>
+  <ul class="options">
+    <li *ngFor="let option of defaultOptions" (click)="onSelectOption(option)">
+      <img src="{{option.url}}" alt="{{option.name}}" title="{{option.name}}" width="64" height="64">
+    </li>
+  </ul>
+  <p class="button-container">
+    <button (click)="restartGame()">Restart The Game</button>
+  </p>
+  <h4>Game Rules:</h4>
+  <ol class="game-rules">
+    <li>Rock beats Scissors</li>
+    <li>Scissors beats Paper</li>
+    <li>Paper beats Rock</li>
+  </ol>
+</main>
